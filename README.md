@@ -29,7 +29,8 @@ The example image does not exist; these fixtures are for static checks, not depl
 ```
 
 This excerpt shows the report format; the unsafe fixture produces additional findings.
-Reports do not echo Secret payloads, environment values or resource names.
+Policy reports do not echo Secret payloads, environment values or resource names.
+Change plans include resource identities (kind, namespace and name), but not manifest values.
 
 ## Policy
 
@@ -72,6 +73,18 @@ Resource quantities use a restricted syntax; the checker does not validate every
 Kubernetes quantity representation, version-specific field or workload requirement.
 
 ## Integration
+
+Compare two local render artifacts before deployment:
+
+```sh
+python3 -m guardrails plan --before examples/safe.json --after examples/safe.json
+```
+
+The result distinguishes create/update/delete/unchanged by resource identity. Desired
+configuration must pass policy. Deletion is blocked unless `--allow-delete` acknowledges
+it in the plan; this flag never deletes anything. Server-managed metadata is ignored.
+Manifest values are not included in the plan. This is a local render comparison, not
+a cluster drift detector or a replacement for server-side validation.
 
 Run the checker on a local render artifact before the deployment stage and require
 exit `0`. This repository does not apply manifests or rewrite your source files.
