@@ -4,6 +4,8 @@
 Python 3.11 이상이면 패키지 설치나 클러스터 인증 없이 실행할 수 있습니다.
 
 ```sh
+git clone https://github.com/swlee3306/gitops-deployment-guardrails.git
+cd gitops-deployment-guardrails
 python3 -m guardrails check examples/safe.json
 python3 -m guardrails check examples/unsafe.json
 python3 -m unittest discover -s tests -v

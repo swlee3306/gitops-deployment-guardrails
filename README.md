@@ -6,6 +6,8 @@ deployment settings before they enter a deployment pipeline, without connecting 
 Python 3.11+. [한국어 안내](README.ko.md)
 
 ```sh
+git clone https://github.com/swlee3306/gitops-deployment-guardrails.git
+cd gitops-deployment-guardrails
 python3 -m guardrails check examples/safe.json
 python3 -m guardrails check examples/unsafe.json
 python3 -m unittest discover -s tests -v
