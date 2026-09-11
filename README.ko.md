@@ -24,3 +24,7 @@ privileged/root 실행, 권한 상승, capabilities, resource budget, wildcard R
 `python3 -m guardrails plan --before examples/safe.json --after examples/safe.json`으로
 두 렌더 결과의 생성·변경·삭제·동일 항목을 비교할 수 있습니다. 실제 배포는 수행하지 않으며,
 삭제 계획은 별도 플래그로 확인하기 전까지 차단합니다. 결과에 manifest 값은 출력하지 않습니다.
+
+## 라이선스
+
+[MIT 라이선스](LICENSE)를 적용합니다. Copyright (c) 2026 swlee3306.

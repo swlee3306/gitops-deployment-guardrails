@@ -103,5 +103,8 @@ absence of secret values in reports. CI is configured for Python 3.11–3.13; no
 run or production deployment is claimed by the presence of that configuration.
 
 The checker is a static policy tool, not a comprehensive secret or vulnerability
-scanner. See [security guidance](SECURITY.md). A distribution license has not yet
-been selected.
+scanner. See [security guidance](SECURITY.md).
+
+## License
+
+[MIT](LICENSE) · Copyright (c) 2026 swlee3306.
