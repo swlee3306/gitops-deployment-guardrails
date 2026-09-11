@@ -1,0 +1,31 @@
+{
+  "apiVersion": "apps/v1",
+  "kind": "Deployment",
+  "metadata": {"name": "synthetic-demo"},
+  "spec": {
+    "selector": {"matchLabels": {"app": "synthetic-demo"}},
+    "template": {
+      "metadata": {"labels": {"app": "synthetic-demo"}},
+      "spec": {
+        "automountServiceAccountToken": false,
+        "securityContext": {
+          "runAsNonRoot": true,
+          "seccompProfile": {"type": "RuntimeDefault"}
+        },
+        "containers": [{
+          "name": "web",
+          "image": "example.com/demo@sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "securityContext": {
+            "allowPrivilegeEscalation": false,
+            "readOnlyRootFilesystem": true,
+            "capabilities": {"drop": ["ALL"]}
+          },
+          "resources": {
+            "requests": {"cpu": "100m", "memory": "64Mi"},
+            "limits": {"cpu": "200m", "memory": "128Mi"}
+          }
+        }]
+      }
+    }
+  }
+}
