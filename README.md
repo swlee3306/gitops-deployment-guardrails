@@ -109,4 +109,7 @@ scanner. See [security guidance](SECURITY.md).
 
 ## License
 
+For a Korean walkthrough mapping policy and planning decisions to tests,
+see the [engineering review guide](docs/ENGINEERING_WALKTHROUGH.ko.md).
+
 [MIT](LICENSE) · Copyright (c) 2026 swlee3306.
